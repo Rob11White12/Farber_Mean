@@ -28,6 +28,25 @@ var emergency = require('./models/emergency');
         app.get('*', function(req, res) {
             res.sendfile('/public/views/index.html'); // load our public/index.html file
         });
+        
+        angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+
+
+                // home page
+                .when('/', {
+                    templateUrl: 'views/home.html',
+                    controller: 'MainController'
+                })
+
+                // nerds page that will use the NerdController
+                .when('/jobs', {
+                    templateUrl: 'views/job.html',
+                    controller: 'jobController'
+                });
+
+            $locationProvider.html5Mode(true);
+
+        }]);
 
     };
 

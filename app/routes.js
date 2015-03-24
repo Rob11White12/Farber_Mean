@@ -1,4 +1,4 @@
-var job = require('./models/job');
+var emergency = require('./models/emergency');
 
     module.exports = function(app) {
 
@@ -7,16 +7,16 @@ var job = require('./models/job');
         // authentication routes
 
         // sample api route
-        app.get('/api/job', function(req, res) {
+        app.get('/api/emergency', function(req, res) {
             // use mongoose to get all nerds in the database
-            job.find(function(err, job) {
+            emergency.find(function(err, emergency) {
 
                 // if there is an error retrieving, send the error. 
                                 // nothing after res.send(err) will execute
                 if (err)
                     res.send(err);
 
-                res.json(job); // return all nerds in JSON format
+                res.json(emergency); // return all nerds in JSON format
             });
         });
 

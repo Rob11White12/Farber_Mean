@@ -1,0 +1,10 @@
+{
+"name": "Farber_Mean",
+  "description": "Plumbing App",
+  "version": "0.0.0",
+  "private": true,
+"dependencies" :{
+"angular": "~1.3.0",
+"angular-route": "~1.3.0"
+}
+}
